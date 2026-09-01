@@ -37,6 +37,18 @@ export class ProductController {
     }
   }
 
+  async onGetProducts(req: Request, res: Response, next: NextFunction) {
+    try {
+      const offset = Number(req.query['offset']); 
+      const limit = Number(req.query['limit']);
+      const responseBody = await this.catalogService.getProducts(limit, offset);
+      return res.status(200).json(responseBody);
+    } catch(e) {
+      const err = e as Error;
+      return res.status(500).json(err.message);
+    }
+  }
+
   async onGetProduct(req: Request, res: Response, next: NextFunction) {
     try {
       const id = Number(req.params["id"]);

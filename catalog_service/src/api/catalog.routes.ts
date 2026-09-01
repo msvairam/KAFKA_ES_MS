@@ -35,6 +35,10 @@ router.patch("/product/:id",
     controller.onUpdateProduct.bind(controller),
 );
 
+router.get("/product",
+    controller.onGetProducts.bind(controller),
+);
+
 router.get("/product/:id",
     controller.onGetProduct.bind(controller),
 );
