@@ -3,6 +3,7 @@ catalog_service/.env
 catalog_service/dist
 
 order_service/node_modules
+order_service/coverage
 order_service/.angular
 order_service/.vscode
 order_service/dist
